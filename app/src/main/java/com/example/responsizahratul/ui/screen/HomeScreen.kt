@@ -48,10 +48,6 @@ import com.example.responsizahratul.ui.theme.ResponsizahratulTheme
 import com.example.responsizahratul.ui.viewmodel.GameUiState
 import com.example.responsizahratul.ui.viewmodel.GameViewModel
 
-/**
- * Stateful composable untuk HomeScreen.
- * Menghubungkan GameViewModel dengan Stateless HomeScreenContent menggunakan state hoisting.
- */
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
@@ -72,10 +68,6 @@ fun HomeScreen(
     )
 }
 
-/**
- * Stateless composable untuk HomeScreen.
- * Hanya menerima parameter UI state dan event handler, sehingga mudah diuji dan dibuatkan preview.
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreenContent(

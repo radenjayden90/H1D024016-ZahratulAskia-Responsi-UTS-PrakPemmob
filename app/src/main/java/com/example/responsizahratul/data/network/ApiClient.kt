@@ -5,14 +5,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-/**
- * Singleton object untuk inisialisasi Retrofit.
- * Sesuai materi Pertemuan 5, konfigurasi instance dibungkus dalam objek singleton
- * dan menggunakan delegasi `by lazy` agar inisialisasi hanya berjalan saat pertama kali dibutuhkan.
- *
- * Menggunakan OkHttpClient Interceptor untuk menyematkan query parameter `key` (API Key RAWG)
- * secara otomatis dari BuildConfig ke setiap HTTP request.
- */
+
 object ApiClient {
 
     private const val BASE_URL = "https://api.rawg.io/api/"
@@ -38,9 +31,7 @@ object ApiClient {
             .build()
     }
 
-    /**
-     * Instance ApiService Retrofit dengan konverter Gson
-     */
+    // Instance ApiService Retrofit dengan konverter Gson
     val apiService: ApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -50,9 +41,6 @@ object ApiClient {
             .create(ApiService::class.java)
     }
 
-    /**
-     * Alias `instance` agar kompatibel dengan penamaan di materi Pertemuan 5 (ApiClient.instance)
-     */
     val instance: ApiService
         get() = apiService
 }

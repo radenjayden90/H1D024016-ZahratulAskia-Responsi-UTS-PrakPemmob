@@ -6,10 +6,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-/**
- * Konfigurasi Tipografi Material 3 sesuai panduan materi Pertemuan 2.
- * Menggunakan FontFamily.SansSerif dengan pembagian hierarki yang jelas (headline, title, body, label).
- */
 val Typography = Typography(
     // Judul besar pada layar atau banner
     headlineMedium = TextStyle(

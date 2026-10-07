@@ -46,10 +46,6 @@ private val LightColorScheme = lightColorScheme(
     onSurfaceVariant = GameOnSurfaceVariantLight
 )
 
-/**
- * Tema utama aplikasi GameDex (ResponsizahratulTheme) sesuai materi Pertemuan 2.
- * Mengatur ColorScheme dan Typography secara terpusat untuk seluruh hierarki antarmuka.
- */
 @Composable
 fun ResponsizahratulTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

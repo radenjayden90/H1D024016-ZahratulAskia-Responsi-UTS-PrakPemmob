@@ -55,10 +55,6 @@ import com.example.responsizahratul.ui.theme.ResponsizahratulTheme
 import com.example.responsizahratul.ui.viewmodel.GameDetailUiState
 import com.example.responsizahratul.ui.viewmodel.GameViewModel
 
-/**
- * Stateful composable untuk GameDetailScreen.
- * Memanggil loadGameDetail(gameId) di LaunchedEffect dan mengamati detailUiState dari GameViewModel.
- */
 @Composable
 fun GameDetailScreen(
     gameId: Int,
@@ -81,10 +77,6 @@ fun GameDetailScreen(
     )
 }
 
-/**
- * Stateless composable untuk GameDetailScreen.
- * Mengikuti arsitektur Pertemuan 4 Bab D & Pertemuan 5 Bab H.
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GameDetailContent(

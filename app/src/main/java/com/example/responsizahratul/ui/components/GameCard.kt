@@ -34,13 +34,7 @@ import com.example.responsizahratul.data.model.Genre
 import com.example.responsizahratul.ui.theme.RatingGold
 import com.example.responsizahratul.ui.theme.ResponsizahratulTheme
 
-/**
- * Komponen kartu game (GameCard) untuk menampilkan item ringkas pada daftar game.
- * Menampilkan gambar cover, judul, tanggal rilis, dan rating.
- *
- * @param game Objek data GameItem
- * @param onClick Aksi klik kartu untuk navigasi ke halaman detail
- */
+
 @Composable
 fun GameCard(
     game: GameItem,

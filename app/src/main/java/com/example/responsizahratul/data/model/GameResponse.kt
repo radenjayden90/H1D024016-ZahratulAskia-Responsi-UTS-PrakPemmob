@@ -2,10 +2,6 @@ package com.example.responsizahratul.data.model
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Model pembungkus respons dari endpoint daftar game (GET /games) RAWG API.
- * Sesuai pedoman null-safety, semua field dibuat nullable (?) untuk menghindari crash akibat data kosong.
- */
 data class GameResponse(
     @SerializedName("count")
     val count: Int? = null,
@@ -20,10 +16,6 @@ data class GameResponse(
     val results: List<GameItem>? = null
 )
 
-/**
- * Model data ringkas untuk setiap item game dalam daftar game.
- * Menyimpan informasi utama seperti nama, tanggal rilis, gambar, rating, dan genre.
- */
 data class GameItem(
     @SerializedName("id")
     val id: Int? = null,
@@ -56,9 +48,6 @@ data class GameItem(
     val genres: List<Genre>? = null
 )
 
-/**
- * Model data genre game (misalnya: Action, RPG, Adventure).
- */
 data class Genre(
     @SerializedName("id")
     val id: Int? = null,

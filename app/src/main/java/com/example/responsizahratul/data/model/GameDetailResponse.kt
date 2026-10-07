@@ -2,10 +2,6 @@ package com.example.responsizahratul.data.model
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Model data detail lengkap untuk game dari endpoint GET /games/{id} RAWG API.
- * Menyediakan informasi judul, deskripsi lengkap/raw, rilis, rating, website, genre, publisher, dan developer.
- */
 data class GameDetailResponse(
     @SerializedName("id")
     val id: Int? = null,
@@ -53,9 +49,6 @@ data class GameDetailResponse(
     val developers: List<Developer>? = null
 )
 
-/**
- * Model data penerbit (publisher) game.
- */
 data class Publisher(
     @SerializedName("id")
     val id: Int? = null,
@@ -64,9 +57,6 @@ data class Publisher(
     val name: String? = null
 )
 
-/**
- * Model data pengembang (developer) game.
- */
 data class Developer(
     @SerializedName("id")
     val id: Int? = null,
