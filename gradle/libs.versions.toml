@@ -12,7 +12,6 @@ retrofit = "2.11.0"
 coil = "2.7.0"
 navigationCompose = "2.8.4"
 lifecycleViewmodelCompose = "2.8.7"
-navigationComposeVersion = "2.10.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,7 +34,6 @@ retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", ve
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

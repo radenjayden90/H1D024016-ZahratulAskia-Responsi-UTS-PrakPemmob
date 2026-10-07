@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
                                 type = NavType.IntType
                             }
                         )
-                    ) { backStackEntry ->
+                    ) { backStackEntry: NavBackStackEntry ->
                         // Ambil gameId dengan aman dari bundle argumen tanpa operator !!
                         val gameId = backStackEntry.arguments?.getInt("gameId") ?: 0
                         GameDetailScreen(
