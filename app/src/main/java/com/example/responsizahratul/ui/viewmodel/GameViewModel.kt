@@ -54,6 +54,7 @@ class GameViewModel(
                 // Lempar kembali CancellationException agar pembatalan coroutine (seperti debounce) tidak diperlakukan sebagai error
                 throw e
             } catch (e: Exception) {
+                android.util.Log.e("GameViewModel", "Gagal memuat game", e)
                 _uiState.value = GameUiState.Error(
                     message = "Gagal memuat data game. Silakan periksa koneksi internet Anda."
                 )
@@ -104,6 +105,7 @@ class GameViewModel(
             } catch (e: kotlinx.coroutines.CancellationException) {
                 throw e
             } catch (e: Exception) {
+                android.util.Log.e("GameViewModel", "Gagal memuat game", e)
                 _detailUiState.value = GameDetailUiState.Error(
                     message = "Gagal memuat detail game. Silakan periksa koneksi internet Anda."
                 )

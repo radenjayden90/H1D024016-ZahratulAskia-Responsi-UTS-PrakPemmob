@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -18,8 +21,13 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // Baca API Key dari local.properties
-        val rawgApiKey = project.findProperty("RAWG_API_KEY") as? String ?: ""
+        // Baca API Key dari file local.properties
+        val localProperties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localProperties.load(FileInputStream(localPropertiesFile))
+        }
+        val rawgApiKey = localProperties.getProperty("RAWG_API_KEY") ?: ""
         buildConfigField("String", "RAWG_API_KEY", "\"$rawgApiKey\"")
     }
 
