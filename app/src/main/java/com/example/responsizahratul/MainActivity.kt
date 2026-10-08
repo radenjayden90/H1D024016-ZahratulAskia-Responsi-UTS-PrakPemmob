@@ -18,11 +18,6 @@ import com.example.responsizahratul.ui.screen.HomeScreen
 import com.example.responsizahratul.ui.theme.ResponsizahratulTheme
 import com.example.responsizahratul.ui.viewmodel.GameViewModel
 
-/**
- * Activity utama aplikasi GameDex.
- * Mengimplementasikan Navigation Compose sesuai materi Pertemuan 2 Bab F dan Pertemuan 4 Bab E.
- * Menggunakan satu instance GameViewModel terpusat yang dioper ke layar-layar untuk menjaga konsistensi state.
- */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

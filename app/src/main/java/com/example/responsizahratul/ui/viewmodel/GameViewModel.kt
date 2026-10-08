@@ -10,12 +10,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-/**
- * ViewModel untuk mengelola logika bisnis dan UI State aplikasi GameDex.
- * Mengikuti pola arsitektur MVVM dari materi Pertemuan 5:
- * Menggunakan MutableStateFlow privat yang diekspos sebagai StateFlow publik (state encapsulation),
- * serta Coroutine viewModelScope untuk memanggil API secara asinkron.
- */
 class GameViewModel(
     private val repository: GameRepository = GameRepository()
 ) : ViewModel() {
@@ -40,10 +34,6 @@ class GameViewModel(
         fetchGames()
     }
 
-    /**
-     * Mengambil daftar game dari API melalui Repository.
-     * @param query Kata kunci pencarian opsional
-     */
     fun fetchGames(query: String? = null) {
         _uiState.value = GameUiState.Loading
         viewModelScope.launch {
@@ -62,14 +52,6 @@ class GameViewModel(
         }
     }
 
-    /**
-     * Dipanggil setiap kali pengguna mengetik di kolom pencarian.
-     * Menerapkan teknik debounce 500 ms:
-     * Menunda panggilan API selama 500 ms dan membatalkan pencarian sebelumnya jika ada ketikan baru.
-     * Tujuannya agar aplikasi tidak melakukan spam request ke API di setiap huruf yang diketik.
-     *
-     * @param newQuery Teks pencarian baru dari pengguna
-     */
     fun onQueryChange(newQuery: String) {
         _searchQuery.value = newQuery
 
@@ -83,19 +65,11 @@ class GameViewModel(
         }
     }
 
-    /**
-     * Memulai pencarian secara langsung tanpa menunggu debounce (misal: tombol keyboard search ditekan).
-     * @param query Teks pencarian (default mengambil nilai terkini dari searchQuery)
-     */
     fun search(query: String = _searchQuery.value) {
         searchJob?.cancel()
         fetchGames(query = query)
     }
 
-    /**
-     * Mengambil detail lengkap game berdasarkan ID game.
-     * @param id ID unik dari game yang dipilih pengguna
-     */
     fun loadGameDetail(id: Int) {
         _detailUiState.value = GameDetailUiState.Loading
         viewModelScope.launch {
